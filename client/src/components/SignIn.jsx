@@ -8,9 +8,9 @@ const SignIn = (props) => (
       <li className="breadcrumb-item active"><Link to="/">Home</Link></li>
     </ol>
     <div className="col col-lg-4">
-      <h3 className="contact-header">Please sign in with Facebook</h3>
-      <Button href="/login/facebook" color='facebook'>
-        <Icon name='facebook' /> Facebook
+      <h3 className="contact-header">Please sign in with Google</h3>
+      <Button href="/auth/google" id="googleButton">
+        <Icon name='google' /> Google+
       </Button>
     </div>
   </div>
