@@ -227,3 +227,8 @@ h2.post-title {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
+
+#googleButton {
+  background-color: #dd4b39;
+  color: white;
+}

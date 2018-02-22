@@ -29,10 +29,13 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/login/facebook', passport.authenticate('facebook'));
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-app.get('/login/facebook/return',
-  passport.authenticate('facebook', { failureRedirect: '/' }),
+app.get('/auth/google/redirect',
+  passport.authenticate('google', {
+    failureRedirect: '/'
+  }),
   function(req, res) {
     res.redirect('/');
   });

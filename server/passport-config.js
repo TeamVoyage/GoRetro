@@ -1,15 +1,15 @@
 const passport = require('passport');
 const session = require('express-session');
-const Strategy = require('passport-facebook').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const db = require('../database/index');
 
 const url = 'http://localhost:8080';
 const User = db.User;
 
-passport.use(new Strategy({
+passport.use(new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: url + '/login/facebook/return',
+  callbackURL: '/auth/google/redirect',
   passReqToCallback: true
 },
 function(req, accessToken, refreshToken, profile, done) {
